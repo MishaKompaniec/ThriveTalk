@@ -2,14 +2,14 @@
 
 
 @font-face {
-    font-family: 'Larsseit';
-    src: local('Larsseit Medium'), local('Larsseit-Medium'),
-        url('Larsseit-Medium.woff2') format('woff2'),
-        url('Larsseit-Medium.woff') format('woff'),
-        url('Larsseit-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
+	font-family: 'Larsseit';
+	src: local('Larsseit Medium'), local('Larsseit-Medium'),
+		url(./assets/fonts/Larsseit-Medium.woff2) format('woff2'),
+		url(./assets/fonts/Larsseit-Medium.woff) format('woff'),
+		url(./assets/fonts/Larsseit-Medium.ttf) format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
 
 .body {
 	position: relative;
@@ -132,7 +132,6 @@ header .container {
 	padding: 0 15px;
 	font-size: 28px;
 	line-height: 30px;
-	/* text-align: center; */
 	color: #22356F;
 }
 
