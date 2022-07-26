@@ -1,0 +1,831 @@
+/* GENERAL STYLES */
+
+
+@font-face {
+    font-family: 'Larsseit';
+    src: local('Larsseit Medium'), local('Larsseit-Medium'),
+        url('Larsseit-Medium.woff2') format('woff2'),
+        url('Larsseit-Medium.woff') format('woff'),
+        url('Larsseit-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+.body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+	font-family: "Larsseit", sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+}
+.container {
+	margin: 0 auto;
+}
+
+.lining {
+	display: none;
+	z-index: 10;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	backdrop-filter: blur(3px);
+}
+
+
+/* HEADER */
+
+.header {
+	position: relative;
+}
+
+header .container {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.header-menu__list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-menu__list-item {
+	margin-right: 20px;
+	display: block;
+}
+
+.header-menu__link {
+	padding-bottom: 4px;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 16px;
+	transition: 0.4s;
+	color: #62D0DF;
+}
+
+.header-menu__link:hover {
+	transform: scale(1.1);
+	color: #22356F;
+}
+
+.active-link {
+	border-bottom: 1px solid #62D0DF;
+	font-weight: bold;
+}
+
+.header__button {
+	width: 150px;
+	height: 50px;
+	display: flex;
+	border-radius: 50px;
+	border: 0;
+	font-size: 14px;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	transition: 0.4s;
+	color: #FFFFFF;
+	background-color: #62D0DF;
+}
+
+.header__button:hover {
+	background-color: #22356F;
+}
+
+
+/* MODAL WINDOW */
+
+
+.modalWindow {
+	z-index: 11;
+	display: none;
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+}
+
+.modalWindow .container {
+	width: 60%;
+	border: 5px solid #62D0DF;
+	border-radius: 50px;
+	background-color: #FFFFFF;
+}
+
+.modalWindow__flexContainer {
+	display: flex;
+	align-items: center;
+}
+
+.modalWindow__text {
+	max-width: 80%;
+	margin: 50px auto 0 auto;
+	padding: 0 15px;
+	font-size: 28px;
+	line-height: 30px;
+	text-align: center;
+	color: #22356F;
+}
+
+.modalWindow__cross {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	margin: 0 20px 0 0;
+	padding: 5px;
+	cursor: pointer;
+}
+
+
+.modalWindow__cross::after {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	width: 35px;
+	height: 2px;
+	transform: rotate(45deg);
+	content: "";
+	background-color: #62D0DF;
+}
+
+.modalWindow__cross::before {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	width: 35px;
+	height: 2px;
+	transform: rotate(-45deg);
+	content: "";
+	background-color: #62D0DF;
+}
+
+.modalWindow__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modalWindow__input {
+	margin-top: 30px;
+	width: 60%;
+	height: 40px;
+	border: 2px solid #62D0DF;
+	color: #22356F;
+}
+
+input:focus {
+	border: 2px solid #22356F;
+	outline: none;
+}
+
+.modalWindow__button {
+	max-width: 150px;
+	width: 100%;
+	height: 50px;
+	margin: 30px 10px 50px 10px;
+	font-size: 16px;
+	border: 0;
+	transition: 0.4s;
+	background-color: #F9B640;
+	color: #FFFFFF;
+}
+
+.modalWindow__button:hover {
+	background-color: orangered;
+}
+
+
+/* ALERT WINDOW */
+
+
+.alertWindow {
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 13;
+	display: none;
+	width: fit-content;
+	height: fit-content;
+	margin: 0 auto;
+	border: 5px solid #62D0DF;
+	border-radius: 50px;
+	background-color: #FFFFFF;
+}
+
+.alertWindow__text {
+	max-width: 80%;
+	margin: 20px auto 0 auto;
+	padding: 0 15px;
+	font-size: 28px;
+	line-height: 30px;
+	text-align: center;
+	color: #22356F;
+}
+
+.alertWindow__button {
+	display: block;
+	max-width: 150px;
+	width: 100%;
+	height: 50px;
+	margin: 30px auto 20px auto;
+	font-size: 16px;
+	border: 0;
+	transition: 0.4s;
+	cursor: pointer;
+	background-color: #F9B640;
+	color: #FFFFFF;
+}
+
+.alertWindow__button:hover {
+	background-color: orangered;
+}
+
+.active {
+	display: block;
+}
+
+
+/* INTRO */
+
+
+.intro {
+	z-index: 1;
+}
+.intro .container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.intro__info {
+	margin-top: 150px;
+	padding: 0 0 0 10%;
+}
+
+.intro__info,
+.intro__picture {
+	width: 50%;
+}
+
+.intro__title {
+	max-width: 550px;
+	width: 100%;
+	margin-bottom: 30px;
+	font-size: 48px;
+	line-height: 53px;
+	color: #22356F;
+}
+
+.intro__text {
+	max-width: 550px;
+	width: 100%;
+	margin-bottom: 30px;
+	font-size: 24px;
+	line-height: 42px;
+	color: #22356F;
+}
+
+.intro__buttons {
+	max-width: 400px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.intro__btn {
+	max-width: 150px;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	font-size: 16px;
+	text-decoration: none;
+	border: 0;
+	align-items: center;
+	justify-content: center;
+	transition: 0.4s;
+	background-color: #F9B640;
+	color: #FFFFFF;
+}
+
+.intro__btn:hover {
+	background-color: orangered;
+}
+
+.intro__btn:nth-of-type(2) {
+	background-color: #FFFFFF;
+	transition: 0.4s;
+	color: #FAB63E;
+}
+
+.intro__btn:nth-of-type(2):hover {
+	color: orangered;
+}
+
+.intro__picture {
+	background: url(./assets/introImg.svg) no-repeat;
+	background-size: cover;
+}
+
+
+/* INFORMATION */
+
+
+.information .container {
+	width: 100%;
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.information__text-block {
+	width: 65%;
+	max-height: 550px;
+	padding: 100px 30px 100px 10%;
+	background-color: #62D0DF;
+}
+
+.information__picture-block {
+	width: 35%;
+	max-height: 550px;
+	background: url(./assets/informBlockImg.svg) no-repeat;
+	background-size: cover;
+}
+
+.information__title {
+	width: fit-content;
+	font-size: 36px;
+	line-height: 27px;
+	color: #FFFFFF;
+}
+
+.information__textQuestions {
+	margin-right: 10px;
+	font-size: 24px;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+.information__text {
+	max-width: 550px;
+	width: 100%;
+	font-size: 22px;
+	line-height: 32px;
+	color: #FFFFFF;
+}
+
+
+/* ABOUT US */
+
+
+.aboutUs .container {
+	width: 80%;
+	margin-top: 50px;
+	display: flex;
+}
+
+.aboutUs__title {
+	width: fit-content;
+	margin: 0;
+	font-size: 16px;
+	line-height: 23px;
+	font-weight: lighter;
+	color: #62D0DF;
+}
+
+.aboutUs__text {
+	max-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+	font-size: 24px;
+	line-height: 34px;
+	color: #22356F;
+}
+
+
+/* CATEGORIES */
+
+
+.categories__title {
+	margin-top: 70px;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	color: rgba(34, 53, 111, 0.5);
+}
+
+.categories .container:nth-of-type(1) {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+	grid-template-rows: minmax(250px, 1fr);
+    grid-auto-rows: 250px;
+	background-color: #FFFFFF;
+}
+
+.categories .container:nth-of-type(2) {
+	margin-top: 50px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(33.3%, 1fr));
+	grid-template-rows: minmax(350px, 1fr);
+    grid-auto-rows: 350px;
+	background-color: #FFFFFF;
+}
+
+.categories .container:nth-of-type(3) {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(33.3%, 1fr));
+	grid-template-rows: minmax(250px, 1fr);
+	row-gap: 10px;
+    grid-auto-rows: 250px;
+}
+
+.categories__WeightLifting {
+	position: relative;
+}
+
+.categories__WeightLifting::before {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url(./assets/dumbbells-1634750_960_720.jpg) no-repeat;
+	background-size: cover;
+	filter: blur(1.25px)
+}
+
+.categories__Running {
+	position: relative;
+	background-color: #22356F;
+}
+
+.categories__PumpingIron {
+	position: relative;
+	background-color: #62D0DF;
+}
+
+.categories__fitness {
+	position: relative;
+}
+
+.categories__fitness::before {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url(./assets/woman-gc26e88c97_1920.jpg) no-repeat center;
+	background-size: cover;
+	filter: blur(1.25px)
+}
+
+.categories__text-center {
+	position: relative;
+	z-index: 4;
+	width: fit-content;
+	margin: 80px auto 0 auto;
+	font-size: 32px;
+	line-height: 34px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.categories__text-left {
+	position: relative;
+	z-index: 5;
+	width: fit-content;
+	margin: 0 auto 0 10px;
+	font-size: 32px;
+	line-height: 34px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.categories__WeightLifting::after,
+.categories__Running::after,
+.categories__PumpingIron::after,
+.categories__fitness::after {
+	position: absolute;
+	z-index: 5;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 65%;
+	height: 1px;
+	content: "";
+	background-color: #FFFFFF;
+}
+
+.categories__PhysicalHealth {
+	position: relative;
+	padding: 70px 0 0 40px;
+	background: #22356F;
+}
+
+.categories__MentalHealth {
+	position: relative;
+	padding: 70px 0 0 40px;
+	background: #0052C1;
+}
+
+.categories__MentalHealth::before {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url(./assets/yoga-g5b3b7f6e7_1920.jpg) no-repeat center;
+	background-size: cover;
+	filter: blur(1.25px)
+}
+
+.categories__Nutrition {
+	position: relative;
+	padding: 70px 0 0 40px;
+	background: #62D0DF;
+	background-size: cover;
+}
+
+.categories__Gymnastics {
+	position: relative;
+	padding: 70px 0 0 40px;
+	background: #62D0DF;
+}
+
+.categories__Gymnastics::before {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url(./assets/men-g3ecbb2f56_1920.jpg) no-repeat center;
+	background-size: cover;
+	filter: blur(1.25px)
+}
+
+.categories__Crossfit {
+	position: relative;
+	padding: 70px 0 0 40px;
+	background: #22356F;
+}
+
+.categories__Aerobics {
+	position: relative;
+	padding: 70px 0 0 40px;
+	background: #22356F;
+}
+
+.categories__Aerobics::before {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url(./assets/fitness-465203_960_720.jpg) no-repeat center;
+	background-size: cover;
+	filter: blur(1.25px)
+}
+
+ .categories__PhysicalHealth::after,
+.categories__MentalHealth::after,
+.categories__Nutrition::after,
+.categories__Gymnastics::after,
+.categories__Crossfit::after,
+.categories__Aerobics::after {
+	position: absolute;
+	z-index: 4;
+	top: 50px;
+	left: 50%;
+	width: 80%;
+	height: 2px;
+	transform: translateX(-50%);
+	content: "";
+	background-color: #FFFFFF;
+}
+
+.categories__block {
+	padding: 10% 10% 10% 10%;
+}
+
+.categories__item-name {
+	font-size: 28px;
+	line-height: 33px;
+	color: #22356F;
+}
+
+.categories__item-text {
+	font-size: 16px;
+	line-height: 25px;
+	color: rgba(34, 53, 111, 0.7);
+}
+
+
+/* STATISTICS */
+
+
+.statistics .container {
+	display: flex;
+}
+
+.statistics__picture{
+	width: 30%;
+	max-height: 800px;
+	background: url(./assets/statisticsPicture.svg) no-repeat center;
+	background-size: cover;
+}
+
+.statistics__info {
+width: 70%;
+max-height: 800px;
+padding: 5% 5% 30px;
+}
+
+.statistics__note {
+	margin-bottom: 200px;
+	font-size: 16px;
+	line-height: 12px;
+	color: #22356F;
+}
+
+.statistics__text {
+	max-width: 700px;
+	width: 100%;
+	margin-bottom: 150px;
+	font-size: 36px;
+	line-height: 53px;
+	color: #22356F;
+}
+
+.statistics__text--blue {
+	color: #6CD3E1;
+}
+
+.statistics__link {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 23px;
+	text-decoration: none;
+	color: #FAB63E;
+	transition: 0.4s;
+}
+
+.statistics__link:hover {
+	color: orangered;
+	font-size: 17px;
+}
+
+
+/* TESTING */
+
+
+.testing .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.testing__info {
+	width: 65%;
+	max-height: 800px;
+	padding: 100px 30px 100px 10%;
+	background-color: #22356F;
+}
+
+.testing__picture {
+	width: 35%;
+	max-height: 800px;
+	background: url(./assets/testingPicture.svg) no-repeat center;
+	background-size: cover;
+}
+
+
+.testing__link {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 12px;
+	text-decoration: none;
+	transition: 0.4s;
+	color: #FFFFFF;
+}
+
+.testing__link:hover {
+	font-size: 17px;
+}
+
+.testing__title {
+	margin-top: 150px;
+	font-size: 55px;
+	line-height: 94px;
+	color: #FFFFFF;
+}
+
+.testing__text {
+	width: 100%;
+	margin-top: 50px;
+	max-width: 550px;
+	font-size: 36px;
+	line-height: 53px;
+	color: #FFFFFF;
+}
+
+.testing__button {
+	max-width: 150px;
+	width: 100%;
+	height: 50px;
+	margin-top: 50px;
+	border: 0;
+	display: flex;
+	font-size: 16px;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	transition: 0.4s;
+	background-color: #F9B640;
+	color: white;
+}
+
+.testing__button:hover {
+	background-color: orangered;
+}
+
+
+/* FOOTER */
+
+
+.footer .container {
+	display: flex;
+}
+
+.footer__picture {
+	width: 35%;
+	max-height: 380px;
+	background: url(./assets/footerPicture.svg) no-repeat center;
+	background-size: cover;
+}
+
+.footer__info {
+	width: 65%;
+	max-height: 380px;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #FFFFFF;
+}
+
+.footer__someInfo,
+.footer__contacnts,
+.footer__officeHours {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer__title {
+	margin-top: 80px;
+	font-size: 14px;
+	line-height: 11px;
+	color: #22356F;
+}
+
+.footer_text {
+	max-width: 200px;
+	width: 100%;
+	margin-top: 15px;
+	font-size: 14px;
+	line-height: 23px;
+	color: rgba(34, 53, 111, 0.5);
+}
+
+.footer__copyright {
+	height: 80px;
+	padding-top: 20px ;
+	background-color: #62D0DF;
+}
+
+.footer__copyrightText {
+	font-size: 14px;
+	line-height: 11px;
+	text-align: center;
+	color: #FFFFFF;
+}
