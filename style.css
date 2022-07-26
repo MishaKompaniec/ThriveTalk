@@ -651,7 +651,7 @@ input:focus {
 	display: flex;
 }
 
-.statistics__pictre {
+.statistics__picture {
 	width: 30%;
 	max-height: 800px;
 	background: url(./assets/statisticsPicture.svg) no-repeat center;
