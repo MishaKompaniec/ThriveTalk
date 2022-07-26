@@ -127,11 +127,12 @@ header .container {
 
 .modalWindow__text {
 	max-width: 80%;
+	min-width: 75%;
 	margin: 50px auto 0 auto;
 	padding: 0 15px;
 	font-size: 28px;
 	line-height: 30px;
-	text-align: center;
+	/* text-align: center; */
 	color: #22356F;
 }
 
